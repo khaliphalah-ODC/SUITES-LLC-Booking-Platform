@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | THE SUITES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae8e7",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#2e301f",
+                    "on-surface-variant": "#3f4848",
+                    "on-background": "#1b1c1c",
+                    "outline-variant": "#bfc8c8",
+                    "on-tertiary-container": "#b3b49d",
+                    "surface-tint": "#296768",
+                    "on-primary-fixed-variant": "#054f50",
+                    "surface-variant": "#e4e2e1",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-primary": "#ffffff",
+                    "background": "#fbf9f8",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed": "#241a00",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-highest": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fed65b",
+                    "on-secondary-container": "#745c00",
+                    "surface-bright": "#fbf9f8",
+                    "secondary-fixed-dim": "#e9c349",
+                    "tertiary-fixed": "#e4e4cc",
+                    "surface": "#fbf9f8",
+                    "primary-fixed-dim": "#95d1d2",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#014d4e",
+                    "secondary": "#735c00",
+                    "secondary-fixed": "#ffe088",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "on-primary-container": "#81bdbd",
+                    "primary": "#003535",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002020",
+                    "inverse-primary": "#95d1d2",
+                    "primary-fixed": "#b0eeee",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#303030",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "surface-container-low": "#f6f3f2",
+                    "outline": "#707979",
+                    "tertiary-container": "#444634"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "section-padding": "120px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "display-xl": ["Playfair Display"],
+                    "label-md": ["Montserrat"],
+                    "display-lg": ["Playfair Display"],
+                    "label-sm": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "headline-sm": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            columns: 1;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+        .filter-btn.active {
+            color: #735c00;
+            border-bottom: 2px solid #735c00;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="font-display-lg text-display-lg tracking-tight text-primary">THE SUITES</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Suites</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">Amenities</a>
+<a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary pb-1 cursor-pointer active:scale-95" href="#">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="#">About Us</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="hidden lg:flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">account_circle</span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md cursor-pointer active:scale-95 transition-all hover:bg-opacity-90 shadow-lg">
+                    Book Now
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Title Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-16 text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4 block">Visual Experience</span>
+<h1 class="font-display-xl text-display-xl text-primary mb-6">Our Curation</h1>
+<p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant">
+                Immerse yourself in the architectural elegance and refined details of THE SUITES. Every corner is a testament to Modern Luxury and serene aesthetics.
+            </p>
+</section>
+<!-- Filter Navigation -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-12">
+<div class="flex flex-wrap justify-center gap-8 border-b border-outline-variant/30 pb-6">
+<button class="filter-btn active font-label-md text-label-md transition-all hover:text-secondary uppercase tracking-wider" onclick="filterGallery('all', this)">All</button>
+<button class="filter-btn font-label-md text-label-md text-on-surface-variant transition-all hover:text-secondary uppercase tracking-wider" onclick="filterGallery('suites', this)">Suites</button>
+<button class="filter-btn font-label-md text-label-md text-on-surface-variant transition-all hover:text-secondary uppercase tracking-wider" onclick="filterGallery('dining', this)">Dining</button>
+<button class="filter-btn font-label-md text-label-md text-on-surface-variant transition-all hover:text-secondary uppercase tracking-wider" onclick="filterGallery('wellness', this)">Wellness</button>
+<button class="filter-btn font-label-md text-label-md text-on-surface-variant transition-all hover:text-secondary uppercase tracking-wider" onclick="filterGallery('exterior', this)">Exterior</button>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="max-w-container-max mx-auto px-margin-desktop pb-section-padding">
+<div class="masonry-grid gap-gutter" id="gallery-container">
+<!-- Suites 1 -->
+<div class="gallery-item group relative overflow-hidden rounded-[24px] border border-outline-variant/10 shadow-sm cursor-pointer" data-category="suites">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide-angle professional photograph of a master bedroom suite at THE SUITES. The room features floor-to-ceiling windows overlooking a serene ocean landscape during the golden hour. Modern minimalist furniture includes a king-sized bed with crisp white linens and a dark emerald velvet throw. Soft gold lighting accents and warm wooden floors create a sophisticated, airy boutique hotel atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwi7kibNPZzdPNAIYygNT_66IFys-DGyYLrDfPSEE1ySswYnTp9Sh98kK7ZSXJe8SjlLODB7qWXKdx5fr0TscZ1D0OfcdOq2g5tESWNScq2SID7H9UNmL3pFKLEzzP8rNe0PEggCttvZkE2-f9dj7TqcQXurp7iy7AUmH11nLxeJ7RhjScWfUfUM93dS2Bw-J0DoSn7so1mILkhPu8gsGB0voKZuv7PfBliFwEaMrvmE-PLubp5rPu86Tpr6auaAeue4YFtjuMvROn"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary-fixed mb-1">Accommodation</span>
+<h3 class="font-headline-sm text-headline-sm">The Presidential Wing</h3>
+</div>
+</div>
+<!-- Dining 1 -->
+<div class="gallery-item group relative overflow-hidden rounded-[24px] border border-outline-variant/10 shadow-sm cursor-pointer" data-category="dining">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Intimate close-up of a fine dining interior with a dark charcoal and gold color palette. The scene shows a perfectly set table with crystal glassware reflecting ambient candlelight. A gourmet dish is artistically presented on a white porcelain plate. In the background, soft-focus emerald green upholstery and dark wood panels add to the exclusive and tranquil mood of the high-end restaurant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0BSSY6nzb0yPKznL6TqTYmSLiCdcnC1_-hTbc5pKxLc0smfXmFZCbMU7HQePBaSZIEKyLSsYxfdJZl6G6SHjL4TmoqbTyxExD0iZSvc4sntJL_rnGbWTe0H-UGJ2pOGVomLyteAcdImEuuIqowGSSj3G6rdySxk3mxNQkV6H5M3rePUg0RyYyvqxk_AubtnwFdqMDQZKCSQOIUz7m_h9LxeKhbj8-A6pmVBjXHFhKbuG553Fvrig80PEm8V_OJfMWdanMNoXX7IjE"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary-fixed mb-1">Culinary</span>
+<h3 class="font-headline-sm text-headline-sm">Azure Brasserie</h3>
+</div>
+</div>
+<!-- Wellness 1 -->
+<div class="gallery-item group relative overflow-hidden rounded-[24px] border border-outline-variant/10 shadow-sm cursor-pointer" data-category="wellness">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious indoor spa sanctuary featuring a heated stone pool with steam rising gently from the surface. The architecture consists of smooth limestone walls and minimalist gold fixtures. The lighting is low and warm, creating long shadows and a sense of absolute tranquility. Tropical plants in large ceramic pots add a touch of natural green to the high-key, modern luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcYsczK4RaGwGsS-4K9AWL0WuX7v_TWDBTrR0AcVeCGL1wRUD6-_xkU4bipPPjUrnJrmQM0MvHTY8D2EiPrYzHgp_4wVvoyWIu6Cib9_mu4aT3nnj6GJ7mYgwxdlFJMCm-g2271Q8eTDrceSs0S-h_QD7U0VcRr_8PjgXZav90016ksqMiSAicCMA648JSY3TkjXZydUpRaEDZal0kREOwd9ln0z6dJNsr6QWGkvEZVzUWbBOrXWxvZhgZGXap6PPf_H8d5QAeqX0f"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary-fixed mb-1">Sanctuary</span>
+<h3 class="font-headline-sm text-headline-sm">The Emerald Spa</h3>
+</div>
+</div>
+<!-- Exterior 1 -->
+<div class="gallery-item group relative overflow-hidden rounded-[24px] border border-outline-variant/10 shadow-sm cursor-pointer" data-category="exterior">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A breathtaking view of a large infinity pool merging with the Mediterranean horizon at sunset. The water is a deep turquoise, reflecting the vibrant orange and pink sky. Elegant white sun loungers are arranged symmetrically on a light beige stone deck. The overall aesthetic is one of vastness, exclusivity, and meticulous curation, captured in a crisp, high-fidelity architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZe9ThDfzqZshiQy5GRAZAzM-6MXptcuiwVuXSrueRwk3f7Pv9_Ks0pIIRae9wI96M4IyDJj-qdiQnCa1REVgHjSDl4Y_r_LC3xG1ndt9eETOrITKaOiJ11gdtk-pA4Cjea2PbpBrShNbIQDlEMPmof7LnzASQP8gt287il8MshSxMDyF1Ubove37CKuLGpZVGFMRy2mRnIxaOZMk6y0HCV9_C8mN18hAAU2upXskS36uCblcgJXsIf4ZjdFBMsbVBArSANgIXR7FN"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary-fixed mb-1">Exterior</span>
+<h3 class="font-headline-sm text-headline-sm">Horizon Infinity Pool</h3>
+</div>
+</div>
+<!-- Suites 2 -->
+<div class="gallery-item group relative overflow-hidden rounded-[24px] border border-outline-variant/10 shadow-sm cursor-pointer" data-category="suites">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist living room area of a luxury suite featuring a curved beige sofa and a marble coffee table. The walls are adorned with abstract gold leaf art. Large glass doors open onto a private terrace. The lighting is natural and bright, highlighting the clean lines and premium textures of the space. The mood is sophisticated and meticulously curated for high-end hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VjqJ18aBhQls8mFgCe6ZU420-f_xvKyy8FiJ9EKbkKZMcVCVMqtZIk05m6YZtjuGOeK5fC2W4tQbilC1u21h3e_5H0y6wITWb_NeSoMv3n3laTSCD5h2LiUHnYe_r7iIebqRVswNzAN4sP8GjtlRfdKPZA3rWCu4W06XHZ97R3jW4PssHZ4MK5oVBX6hls6Hf7-tcmjYwsbif1dKOntYKpoJDJpjkkx1gtEYPrB_u4B4oG2sVYfZTDreqFhGEtvRV-TIBnsHsz1N"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary-fixed mb-1">Design</span>
+<h3 class="font-headline-sm text-headline-sm">Terrace Collection</h3>
+</div>
+</div>
+<!-- Wellness 2 -->
+<div class="gallery-item group relative overflow-hidden rounded-[24px] border border-outline-variant/10 shadow-sm cursor-pointer" data-category="wellness">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An ultra-modern fitness studio with panoramic forest views. The space is equipped with high-end wooden exercise equipment and pristine white mats. The floor is a light, polished concrete. Large skylights flood the room with soft daylight. The aesthetic is clean, energetic, yet peaceful, reflecting a holistic approach to wellness in a boutique editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAubevfTxk7c5H3hLRWskFEv3R5CnOJJ_43enay94SeiSnsb9TOFnrkjK2dSar18bfh7IEQqEXDWHk0i_iqI6LKJ79U3Dcp1xDQXWC8oMmmG7H663yUgai6AXFiNpsycoAeYu_OXPeCLjtKaS_IyAc19d6Pgi3f4bbpqN5wBoKXm1aaY3dziTltTGTSpPUM6erJrGB5IzIhdfNn13mwdHBPpNbVxGL52_z0MrEK1N32KVpNzTfik2Js9kRIC1c6PdOKzIuwKtIlkRK2"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+<span class="font-label-sm text-label-sm uppercase tracking-tighter text-secondary-fixed mb-1">Vitality</span>
+<h3 class="font-headline-sm text-headline-sm">Wellness Pavilion</h3>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary w-full py-section-padding">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm text-surface-bright">THE SUITES</div>
+<p class="font-body-md text-body-md text-tertiary-fixed-dim max-w-xs">
+                    Curating unforgettable experiences through meticulous design and unparalleled hospitality.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase mb-2">Explore</span>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Our Suites</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Experiences</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Destinations</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase mb-2">Company</span>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">About Us</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Press Kit</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase mb-2">Legal</span>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-colors" href="#">Terms of Service</a>
+<div class="pt-4 flex space-x-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim cursor-pointer hover:text-secondary-fixed">public</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim cursor-pointer hover:text-secondary-fixed">share</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-tertiary-container">
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim">© 2024 THE SUITES LLC. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        function filterGallery(category, element) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button styling
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'text-secondary');
+                btn.classList.add('text-on-surface-variant');
+                btn.style.borderBottom = 'none';
+            });
+            element.classList.add('active', 'text-secondary');
+            element.classList.remove('text-on-surface-variant');
+            element.style.borderBottom = '2px solid #735c00';
+
+            // Filter items with a simple scale animation
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Initialize intersection observer for reveal effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.classList.add('transition-all', 'duration-1000', 'translate-y-10', 'opacity-0');
+            observer.observe(item);
+        });
+    </script>
+</body></html>

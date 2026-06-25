@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | The SUITES LLC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(251, 249, 248, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 53, 53, 0.05);
+        }
+        .emerald-shadow {
+            box-shadow: 0 10px 30px rgba(0, 53, 53, 0.04), 0 2px 4px rgba(0, 53, 53, 0.02);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffe088",
+                      "inverse-primary": "#95d1d2",
+                      "on-primary-fixed": "#002020",
+                      "surface-container": "#f0eded",
+                      "surface-container-high": "#eae8e7",
+                      "surface-bright": "#fbf9f8",
+                      "tertiary-container": "#444634",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#745c00",
+                      "primary-fixed-dim": "#95d1d2",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-container": "#fed65b",
+                      "primary": "#003535",
+                      "on-secondary": "#ffffff",
+                      "background": "#fbf9f8",
+                      "on-error-container": "#93000a",
+                      "secondary": "#735c00",
+                      "outline-variant": "#bfc8c8",
+                      "on-surface": "#1b1c1c",
+                      "surface-variant": "#e4e2e1",
+                      "on-tertiary-fixed": "#1b1d0e",
+                      "inverse-on-surface": "#f3f0f0",
+                      "tertiary-fixed-dim": "#c8c8b0",
+                      "on-secondary-fixed": "#241a00",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#2e301f",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-primary-fixed-variant": "#054f50",
+                      "surface": "#fbf9f8",
+                      "outline": "#707979",
+                      "on-surface-variant": "#3f4848",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#e4e4cc",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-primary-container": "#81bdbd",
+                      "on-tertiary-fixed-variant": "#474836",
+                      "primary-fixed": "#b0eeee",
+                      "on-background": "#1b1c1c",
+                      "inverse-surface": "#303030",
+                      "on-tertiary-container": "#b3b49d",
+                      "primary-container": "#014d4e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "section-padding": "120px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Montserrat"],
+                      "label-sm": ["Montserrat"],
+                      "display-xl": ["Playfair Display"],
+                      "body-md": ["Montserrat"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-sm": ["Playfair Display"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "label-md": ["Montserrat"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-[100] bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm h-[80px]">
+<div class="flex justify-between items-center h-full px-margin-desktop max-w-container-max mx-auto">
+<span class="font-display-lg text-headline-sm text-secondary">The SUITES LLC</span>
+<div class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Suites</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Amenities</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Experiences</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-label-md text-label-md text-secondary border-b-2 border-secondary pb-1 font-bold" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">search</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">person</span>
+<button class="bg-primary text-white px-8 py-3 rounded-[16px] font-label-md text-label-md hover:opacity-90 transition-all">Book Now</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-40 pb-20 px-margin-desktop max-w-container-max mx-auto text-center">
+<h1 class="font-display-xl text-display-xl mb-6 text-primary">Get in Touch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Whether you are seeking a curated escape or require assistance with an existing reservation, our concierge team is at your service.</p>
+</header>
+<!-- Main Contact Section: Form + Details -->
+<main class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-section-padding">
+<!-- Left: Refined Contact Form (Bento Style) -->
+<section class="lg:col-span-7 bg-white rounded-[24px] p-10 border border-surface-container emerald-shadow">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Send a Message</h2>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="name">Full Name</label>
+<input class="bg-surface-container-low border-none rounded-[16px] p-4 focus:ring-2 focus:ring-secondary transition-all outline-none font-body-md" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="email">Email Address</label>
+<input class="bg-surface-container-low border-none rounded-[16px] p-4 focus:ring-2 focus:ring-secondary transition-all outline-none font-body-md" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="subject">Subject</label>
+<input class="bg-surface-container-low border-none rounded-[16px] p-4 focus:ring-2 focus:ring-secondary transition-all outline-none font-body-md" id="subject" placeholder="Reservation Inquiry" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="message">Your Message</label>
+<textarea class="bg-surface-container-low border-none rounded-[16px] p-4 focus:ring-2 focus:ring-secondary transition-all outline-none font-body-md resize-none" id="message" placeholder="How can we elevate your experience?" rows="6"></textarea>
+</div>
+<button class="bg-primary text-white w-full py-5 rounded-[16px] font-label-md text-label-md uppercase tracking-widest hover:bg-primary/95 transition-all emerald-shadow" type="submit">
+                    Submit Inquiry
+                </button>
+</form>
+</section>
+<!-- Right: Contact Details Sidebar -->
+<aside class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Contact Cards -->
+<div class="bg-primary text-on-primary rounded-[24px] p-10 flex flex-col justify-between min-h-[300px]">
+<h3 class="font-headline-sm text-headline-sm mb-6">Concierge Direct</h3>
+<div class="space-y-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-on-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed">call</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm opacity-60 uppercase">Phone</p>
+<p class="font-body-lg text-body-lg">+1 (888) 555-0192</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-on-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed">mail</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm opacity-60 uppercase">Email</p>
+<p class="font-body-lg text-body-lg">concierge@thesuites.luxury</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-on-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm opacity-60 uppercase">Address</p>
+<p class="font-body-lg text-body-lg">702 Boutique Way, Aspen, CO 81611</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Minimalist Emerald Map Placeholder -->
+<div class="relative rounded-[24px] overflow-hidden emerald-shadow group h-full min-h-[300px]">
+<div class="absolute inset-0 bg-primary/10 z-10 pointer-events-none group-hover:bg-primary/0 transition-colors duration-500"></div>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-8 bg-gradient-to-t from-primary/80 to-transparent">
+<p class="font-label-md text-label-md text-white font-bold">Aspen, Colorado</p>
+<p class="font-label-sm text-label-sm text-white/80">Signature Suites &amp; Residences</p>
+</div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist, high-end digital map rendering of Aspen Colorado using an emerald and charcoal color palette. The map features clean lines, subtle topographic details, and a distinct lack of clutter, reflecting a modern luxury aesthetic. Elegant marker pins in gold highlight exclusive property locations. The lighting is soft and ambient." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS4ysy7WmoSQ6e9Yn5cH0WoCFoqxRxTEZrTpg7QxCawsK8wJVV2JjJj_ZD7YQoA5mbHgI7ci2Lm6saKn5cQSstjWSF7b6bsAQ8AyU3XjoSgA1nHmlA25i7_d6bkwM2kHY3vsiaXCaCQRcBwoNrS-CuR-vqJgNGJU6nrxrMPNHWU181QX-5Z3weYv86iGRXSf4zKiU7kTEA_KLC0XFkD3STSOKNtxjJXeYCjlxcLniozEHJnQHtSMls0V6pkFboxtO2CxsgU3qxgY8_')"></div>
+<div class="hidden" data-location="Aspen, Colorado" style=""></div>
+</div>
+</aside>
+</main>
+<!-- FAQ Accordion Section -->
+<section class="bg-surface-container-low py-section-padding px-margin-desktop">
+<div class="max-w-[800px] mx-auto">
+<h2 class="font-display-lg text-display-lg text-center mb-16 text-primary">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="accordion-item bg-white rounded-[24px] border border-surface-container overflow-hidden emerald-shadow cursor-pointer">
+<div class="p-8 flex justify-between items-center gap-4" onclick="toggleAccordion(this.parentElement)">
+<h4 class="font-headline-sm text-headline-sm text-primary">How do I book a private viewing?</h4>
+<span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content px-8 pb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">Private viewings can be scheduled via our concierge team or through the 'Book Now' interface. We offer both in-person and virtual 4K immersive tours for our international clients.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="accordion-item bg-white rounded-[24px] border border-surface-container overflow-hidden emerald-shadow cursor-pointer">
+<div class="p-8 flex justify-between items-center gap-4" onclick="toggleAccordion(this.parentElement)">
+<h4 class="font-headline-sm text-headline-sm text-primary">What amenities are included in the 'Grand Suite'?</h4>
+<span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content px-8 pb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">The Grand Suite features a 24-hour dedicated butler, a private temperature-controlled wine cellar, in-suite spa facilities, and priority access to our Michelin-starred dining outlets.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="accordion-item bg-white rounded-[24px] border border-surface-container overflow-hidden emerald-shadow cursor-pointer">
+<div class="p-8 flex justify-between items-center gap-4" onclick="toggleAccordion(this.parentElement)">
+<h4 class="font-headline-sm text-headline-sm text-primary">Are there long-term residence options?</h4>
+<span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content px-8 pb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">Yes, The SUITES offers a limited number of long-term residential leases ranging from six months to two years, featuring all the perks of our high-end hospitality services.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="accordion-item bg-white rounded-[24px] border border-surface-container overflow-hidden emerald-shadow cursor-pointer">
+<div class="p-8 flex justify-between items-center gap-4" onclick="toggleAccordion(this.parentElement)">
+<h4 class="font-headline-sm text-headline-sm text-primary">What is your cancellation policy?</h4>
+<span class="material-symbols-outlined text-secondary accordion-icon transition-transform">expand_more</span>
+</div>
+<div class="accordion-content px-8 pb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">Cancellations must be made at least 72 hours prior to arrival for a full refund. For specialty experiences and group bookings, a 7-day notice is required.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full pt-section-padding pb-8 bg-primary dark:bg-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto text-on-primary">
+<div class="space-y-6">
+<span class="font-display-lg text-headline-md text-secondary-fixed">The SUITES</span>
+<p class="font-body-md text-body-md opacity-70">Redefining luxury living with meticulously curated spaces and unparalleled hospitality.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-secondary-fixed font-bold">Quick Links</h5>
+<a class="font-body-md text-body-md text-on-primary/70 hover:text-on-primary hover:translate-x-1 transition-all" href="#">Suites</a>
+<a class="font-body-md text-body-md text-on-primary/70 hover:text-on-primary hover:translate-x-1 transition-all" href="#">Amenities</a>
+<a class="font-body-md text-body-md text-on-primary/70 hover:text-on-primary hover:translate-x-1 transition-all" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-secondary-fixed font-bold">Inquiries</h5>
+<a class="font-body-md text-body-md text-on-primary/70 hover:text-on-primary hover:translate-x-1 transition-all" href="#">Newsletter</a>
+<a class="font-body-md text-body-md text-on-primary/70 hover:text-on-primary hover:translate-x-1 transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary/70 hover:text-on-primary hover:translate-x-1 transition-all" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-md text-label-md text-secondary-fixed font-bold">Follow Us</h5>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">face_nod</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">photo_camera</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">brand_awareness</span>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-on-primary/10 text-center max-w-container-max mx-auto">
+<p class="font-body-md text-body-md text-on-primary/70">© 2024 The SUITES LLC. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function toggleAccordion(item) {
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't already open
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Form submission micro-interaction
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending Inquiry...';
+            btn.classList.add('opacity-80');
+            
+            setTimeout(() => {
+                btn.innerText = 'Sent Successfully';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-secondary');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-secondary', 'opacity-80');
+                    btn.classList.add('bg-primary');
+                    e.target.reset();
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>

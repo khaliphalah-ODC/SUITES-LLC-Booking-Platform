@@ -820,6 +820,7 @@ lib/ = helper functions
 styles/ = global styling
 ```
 
+
 ## 11. Backend Folder Structure
 
 ```txt
@@ -1042,7 +1043,7 @@ Build:
 
 ```txt
 Register
-Login
+LoginIs The SUITES LLC a property development company, or does it also own and operate hotel suites that customers can book online?
 Logout
 Customer sessions
 Staff/admin access

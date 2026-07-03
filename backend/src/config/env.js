@@ -18,7 +18,7 @@ const env = {
   jwtSecret: required("JWT_SECRET", "development-only-secret-change-me"),
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "15m",
   refreshTokenDays: Number(process.env.REFRESH_TOKEN_DAYS || 30),
-  cookieSecure: process.env.COOKIE_SECURE === "true",
+  cookieSecure: process.env.NODE_ENV === "production" || process.env.COOKIE_SECURE === "true",
   taxRate: Number(process.env.TAX_RATE || 0),
   rateLimits: {
     api: Number(process.env.RATE_LIMIT_API_MAX || 300),

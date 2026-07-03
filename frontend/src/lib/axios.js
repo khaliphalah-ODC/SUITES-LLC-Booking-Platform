@@ -31,7 +31,12 @@ function toAppError(error) {
   const fieldMessages = data?.details?.fields
     ?.map((field) => `${field.field}: ${field.message}`)
     .join(", ");
-  const message = fieldMessages || data?.message || error.message || "Request failed.";
+  const message =
+    fieldMessages ||
+    data?.message ||
+    (typeof data === "string" ? data : "") ||
+    error.message ||
+    "Request failed.";
   const appError = new Error(message);
   appError.status = error.response?.status;
   appError.details = data?.details;
@@ -72,7 +77,8 @@ apiClient.interceptors.response.use(
     const canRefresh =
       error.response?.status === 401 &&
       !originalRequest._retry &&
-      !originalRequest.skipAuthRefresh;
+      !originalRequest.skipAuthRefresh &&
+      (originalRequest.url !== "/auth/me" || window.localStorage.getItem("suites_user"));
 
     if (canRefresh) {
       originalRequest._retry = true;

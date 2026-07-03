@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## The SUITES Preview Deploy
+
+Create a Vercel project with the root directory set to `frontend`.
+
+Set this environment variable in the frontend Vercel project:
+
+```txt
+NEXT_PUBLIC_API_URL=https://your-backend-preview.vercel.app/api
+```
+
+The frontend API layer uses Axios from `src/lib/axios.js`. `NEXT_PUBLIC_API_URL`
+should include `/api` because service files call paths such as `/suites`,
+`/auth/login`, and `/dashboard`.

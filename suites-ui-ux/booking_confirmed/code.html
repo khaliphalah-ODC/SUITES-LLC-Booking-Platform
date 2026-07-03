@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Confirmed | THE SUITES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#002117",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "inverse-surface": "#27313f",
+                    "outline-variant": "#bfc9c3",
+                    "surface-tint": "#2b6954",
+                    "on-background": "#121c2a",
+                    "on-primary-fixed-variant": "#0b513d",
+                    "surface-variant": "#d9e3f6",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffe088",
+                    "on-secondary-fixed": "#241a00",
+                    "on-secondary-container": "#745c00",
+                    "on-surface": "#121c2a",
+                    "on-primary-container": "#80bea6",
+                    "secondary-container": "#fed65b",
+                    "primary-fixed": "#b0f0d6",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "tertiary-fixed": "#e4e4cc",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#95d3ba",
+                    "secondary-fixed-dim": "#e9c349",
+                    "inverse-primary": "#95d3ba",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface-variant": "#404944",
+                    "surface-container-highest": "#d9e3f6",
+                    "primary": "#003527",
+                    "outline": "#707974",
+                    "tertiary": "#2e301f",
+                    "on-error": "#ffffff",
+                    "primary-container": "#064e3b",
+                    "surface-dim": "#d0dbed",
+                    "surface-container-high": "#dee9fc",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#eff4ff",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#444634",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-tertiary-container": "#b3b49d",
+                    "secondary": "#735c00",
+                    "surface-container": "#e6eeff",
+                    "tertiary-fixed-dim": "#c8c8b0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "section-gap": "120px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-pattern {
+            background-color: #f8f9ff;
+            background-image: radial-gradient(rgba(115, 92, 0, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .custom-shadow {
+            box-shadow: 0 20px 40px -10px rgba(18, 28, 42, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-16 h-20 max-w-[100vw] mx-auto bg-surface/90 backdrop-blur-xl border-b border-secondary/10 shadow-sm opacity-95">
+<div class="text-headline-sm font-headline-sm text-primary tracking-tight">THE SUITES</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface font-label-md hover:text-secondary transition-colors duration-300" href="#">Experience</a>
+<a class="text-on-surface font-label-md hover:text-secondary transition-colors duration-300" href="#">Suites</a>
+<a class="text-on-surface font-label-md hover:text-secondary transition-colors duration-300" href="#">Dining</a>
+<a class="text-on-surface font-label-md hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary font-label-md px-6 py-3 rounded-lg hover:bg-primary-container transition-all active:scale-95 duration-200">
+            Book Now
+        </button>
+</nav>
+<main class="pt-32 pb-section-gap">
+<!-- Confirmation Header Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 text-center">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-secondary-container/20 border border-secondary/20 mb-8 animate-bounce">
+<span class="material-symbols-outlined text-[48px] text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em]">Reservation Confirmed</span>
+<h1 class="font-headline-lg text-headline-lg text-primary max-w-2xl leading-tight">Your stay is confirmed.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">We’re preparing for your arrival at The SUITES Liberia. A detailed itinerary has been sent to your email.</p>
+</div>
+</section>
+<!-- Booking Summary & Details Bento Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Details Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden custom-shadow">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 overflow-hidden h-[300px] md:h-auto">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="A luxurious, sun-drenched suite at The SUITES Liberia featuring modern West African decor, high ceilings, and floor-to-ceiling windows overlooking a lush tropical garden. The room is styled with editorial minimalism, using a palette of warm whites, deep emerald greens, and soft gold accents. Soft, natural morning light creates a serene and exclusive atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA04g1dDm2qecSyvnXYWXFvSDrr7mD5k9ap9BXd4BUwHB-T84E10m9uE-4wSbiGyUeroGSa72r7vYDXYvwWzHVaarmPHZMO7FoBfIkWnPiBcO-h8mMfWUFFNLdmlHy-RdgVJBgMTZzEhGpzv2uo4PYi4LvRGCR2yfvY8s1rkw7or7Wwp05e2_9d8H6k9rHa7Oll0MSyaqMhuXlhHrwLLI8sU4E8mAZFnYqIpkuzm7XjuEMv407X5fBe5fT7Fq5VYdVXqbarkb-NDYc')"></div>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Executive Panorama Suite</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase">Confirmation ID: #TS-94281-LB</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase">Check-in</p>
+<p class="font-body-md text-on-surface font-semibold">October 12, 2024 (from 3:00 PM)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">event</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase">Check-out</p>
+<p class="font-body-md text-on-surface font-semibold">October 15, 2024 (until 11:00 AM)</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase">Guests</p>
+<p class="font-body-md text-on-surface font-semibold">2 Adults, 1 Child</p>
+</div>
+</div>
+</div>
+<div class="mt-10 border-t border-secondary/10 pt-8 flex gap-4">
+<button class="flex-1 bg-secondary text-on-secondary font-label-md px-6 py-4 rounded transition-all hover:bg-on-secondary-container hover:shadow-lg active:scale-95">
+                                    Manage My Stay
+                                </button>
+<button class="p-4 border border-secondary text-secondary rounded hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">print</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Summary Card -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-primary text-on-primary p-8 rounded-xl h-full flex flex-col">
+<h4 class="font-headline-sm text-headline-sm mb-6">Payment Summary</h4>
+<div class="space-y-4 flex-grow">
+<div class="flex justify-between font-body-md opacity-80">
+<span>3 Nights Stay</span>
+<span>$1,350.00</span>
+</div>
+<div class="flex justify-between font-body-md opacity-80">
+<span>Service Fee</span>
+<span>$45.00</span>
+</div>
+<div class="flex justify-between font-body-md opacity-80">
+<span>Taxes</span>
+<span>$112.00</span>
+</div>
+<div class="pt-4 mt-4 border-t border-on-primary/10 flex justify-between font-headline-sm">
+<span>Total Paid</span>
+<span>$1,507.00</span>
+</div>
+</div>
+<div class="mt-8 bg-primary-container p-4 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">info</span>
+<p class="text-sm font-body-md opacity-90 leading-relaxed">Your credit card has been charged. Cancellations are free up to 48 hours before check-in.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Travel Tips Section (Local Insights) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 bg-surface-container-low rounded-3xl relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<div class="inline-block py-1 px-3 bg-secondary-container/40 text-secondary font-label-sm rounded-full mb-4">INSIDER GUIDE</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Local Travel Tips for Liberia</h2>
+<p class="font-body-lg text-on-surface-variant">Elevate your stay with our curated insights into the local culture and vibrant pulse of Monrovia.</p>
+</div>
+<a class="text-secondary font-label-md flex items-center gap-2 border-b border-secondary pb-1 hover:gap-4 transition-all duration-300" href="#">
+                    Full City Guide <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Tip Card 1 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:border-secondary/30 transition-all duration-300 hover:translate-y-[-8px]">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-6">waves</span>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">Robertsport Surfing</h4>
+<p class="font-body-md text-on-surface-variant mb-6">Visit Robertsport for world-class point breaks. Even if you don't surf, the pristine beaches and colonial history make for a perfect day trip.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-label-sm rounded-full text-outline uppercase font-semibold">Adventure</span>
+<span class="px-3 py-1 bg-surface-container text-label-sm rounded-full text-outline uppercase font-semibold">Coastal</span>
+</div>
+</div>
+<!-- Tip Card 2 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:border-secondary/30 transition-all duration-300 hover:translate-y-[-8px]">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-6">restaurant</span>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">Authentic Flavors</h4>
+<p class="font-body-md text-on-surface-variant mb-6">Don't miss out on Jollof rice and "Cassava Leaf" stew. Our concierge can recommend the most authentic family-run spots in Sinkor.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-label-sm rounded-full text-outline uppercase font-semibold">Dining</span>
+<span class="px-3 py-1 bg-surface-container text-label-sm rounded-full text-outline uppercase font-semibold">Culture</span>
+</div>
+</div>
+<!-- Tip Card 3 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 hover:border-secondary/30 transition-all duration-300 hover:translate-y-[-8px]">
+<span class="material-symbols-outlined text-[40px] text-secondary mb-6">directions_car</span>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">The SUITES Shuttle</h4>
+<p class="font-body-md text-on-surface-variant mb-6">For seamless travel, use our private hotel chauffeur service. Traffic in Monrovia can be complex; let our experts navigate for you.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-label-sm rounded-full text-outline uppercase font-semibold">Services</span>
+<span class="px-3 py-1 bg-surface-container text-label-sm rounded-full text-outline uppercase font-semibold">Essential</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Pre-arrival Upsell -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-on-primary-fixed text-on-primary rounded-3xl p-10 md:p-20 flex flex-col lg:flex-row items-center gap-12 overflow-hidden relative">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+
+</div>
+<div class="lg:w-1/2 z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Enhance Your Experience.</h2>
+<p class="font-body-lg opacity-80 mb-10">Book a spa treatment or a rooftop dinner at our signature restaurant, 'The Veranda', before you arrive to ensure availability.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary text-on-secondary font-label-md px-10 py-5 rounded-full hover:scale-105 transition-transform">Browse Experiences</button>
+<button class="border border-on-primary/30 font-label-md px-10 py-5 rounded-full hover:bg-on-primary/10 transition-colors">Contact Concierge</button>
+</div>
+</div>
+<div class="lg:w-1/2 z-10 grid grid-cols-2 gap-4">
+<div class="rounded-2xl overflow-hidden h-40">
+<img class="w-full h-full object-cover" data-alt="Close up of a luxury spa treatment with hot stones, essential oils, and white orchids in a tranquil, candlelit setting with natural stone textures, following the editorial luxury aesthetic of The SUITES." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtOqVmH4yGzr-PWJAv4cowd1f9wZsjbmYCltopRbwnPRMxisqo3ZKqOxR36tNQhO9rDlAQhynlBl6Sl4_kQlkyMH0c9oRpfVSkPtWnNIZSPGzA4R11GzNRZjJmdNaEFeCRViQye861d4d2acBgc3VAD5xOUIjKGcvQ5e371ZhUhetHKRRRxEekeHxG05B7C8TZ5ro70rXABkiE1dWlIOkhtE1SUQbBicB4o7EVhZS1YSBgP5pC90ZT8d2ckkSFSojN7ufFVPZMhPA"/>
+</div>
+<div class="rounded-2xl overflow-hidden h-40 mt-8">
+<img class="w-full h-full object-cover" data-alt="A gourmet dining scene on a rooftop overlooking the Monrovia skyline at dusk. A beautifully set table with crystal glassware, fine china, and gold cutlery, illuminated by soft golden hour light and flickering candles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5goVlMOAxN3gLeh0A3Yl9G5Vl3tjN9DP1p_xYdfdu9P1E6z02QaKs_jdqUp5AFwTYzNnAWV51yegM0fQQ154cHI1CnhsX6jvqKc8u4fhIniiabX4lCDwKR1Ctqp8C4WvA2Xr6oAdbmDyxzMd6B89S3rmj9thEAOgZ2px8PXn3oMO0YAQaQUpVqEzngU81lqbkfF0uYuvbu1dHsiJJWEzadku2m5MtCKKqhRJYnAAvaeJmdW0T6CAdxZpcx27SZW05vNWpUA42OL8"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-highest w-full py-20 px-6 md:px-16 border-t border-secondary/20">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-secondary mb-6">THE SUITES</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Elevating the standard of hospitality in West Africa through timeless design and exceptional service.</p>
+</div>
+<div>
+<h5 class="font-label-md text-primary mb-6">Navigation</h5>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Our Suites</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Experience</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dining &amp; Bar</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Wellness</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-primary mb-6">Company</h5>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Press Kit</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-primary mb-6">Inquiries</h5>
+<p class="font-body-md text-on-surface-variant mb-4">Tubman Boulevard, Sinkor<br/>Monrovia, Liberia</p>
+<p class="font-body-md text-on-surface-variant">reservations@thesuitesliberia.com</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-80">© 2024 THE SUITES LLC. Monrovia, Liberia.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the "Manage My Stay" button
+        document.querySelector('button.flex-1').addEventListener('mousedown', function() {
+            this.classList.add('scale-95');
+        });
+        document.querySelector('button.flex-1').addEventListener('mouseup', function() {
+            this.classList.remove('scale-95');
+        });
+
+        // Simple Fade-in effect on scroll for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid > div').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

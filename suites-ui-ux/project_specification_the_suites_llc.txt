@@ -1,0 +1,33 @@
+# The SUITES LLC - Project Overview
+
+## Brand Identity
+**Name:** The SUITES LLC
+**Location:** Liberia
+**Style:** Emerald & Gold Editorial, Modern Luxury
+**Tone:** Calm, Elegant, Premium
+
+## Core Flows & Screens
+
+### 1. Public Facing (Guest Acquisition)
+- **Home**: Luxury hero with booking search (Check-in, Check-out, Guests, Suite Type).
+- **Suites Listing**: Grid of suites with cards showing image, name, price, capacity.
+- **Suite Details**: Immersive view with high-res imagery, amenities, and availability.
+- **Booking Flow**: Guest info, stay details, price summary, and payment.
+- **Confirmation**: Post-booking success screen.
+- **Amenities & Experiences**: Showcasing local Liberian luxury and concierge services.
+- **Gallery**: High-fidelity visual showcase.
+- **About & Contact**: Brand story and luxury support.
+- **Auth**: Login & Register.
+
+### 2. Guest Portal (Stay Management)
+- **Dashboard**: Overview of upcoming stays and loyalty points.
+- **Reservations**: Detailed list of past and future bookings.
+- **Payments**: Transaction history and saved methods.
+- **Notifications & Profile**: Personal preferences and alerts.
+
+### 3. Admin / Staff Dashboard (Operations)
+- **Overview**: Real-time stats (occupancy, revenue, upcoming arrivals).
+- **Bookings Management**: Table with filters and status badges (Confirmed, Pending, Checked-in).
+- **Inventory Control**: Suites, Amenities, and Experiences management.
+- **User & Message Center**: Handling guest inquiries and staff access.
+- **Settings**: System configurations.

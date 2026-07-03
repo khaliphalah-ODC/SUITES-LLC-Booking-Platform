@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amenities &amp; Experiences | THE SUITES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002117",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "inverse-surface": "#27313f",
+                        "outline-variant": "#bfc9c3",
+                        "surface-tint": "#2b6954",
+                        "on-background": "#121c2a",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "surface-variant": "#d9e3f6",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffe088",
+                        "on-secondary-fixed": "#241a00",
+                        "on-secondary-container": "#745c00",
+                        "on-surface": "#121c2a",
+                        "on-primary-container": "#80bea6",
+                        "secondary-container": "#fed65b",
+                        "primary-fixed": "#b0f0d6",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#1b1d0e",
+                        "tertiary-fixed": "#e4e4cc",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#95d3ba",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#95d3ba",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#404944",
+                        "surface-container-highest": "#d9e3f6",
+                        "primary": "#003527",
+                        "outline": "#707974",
+                        "tertiary": "#2e301f",
+                        "on-error": "#ffffff",
+                        "primary-container": "#064e3b",
+                        "surface-dim": "#d0dbed",
+                        "surface-container-high": "#dee9fc",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#474836",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#444634",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-tertiary-container": "#b3b49d",
+                        "secondary": "#735c00",
+                        "surface-container": "#e6eeff",
+                        "tertiary-fixed-dim": "#c8c8b0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(248, 249, 255, 0) 0%, rgba(248, 249, 255, 1) 100%);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop h-20 max-w-container-max mx-auto bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-xl border-b border-secondary/10 shadow-sm opacity-95">
+<div class="text-headline-sm font-headline-sm text-primary dark:text-primary-fixed tracking-tight">THE SUITES</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary dark:text-secondary-fixed border-b border-secondary pb-1 font-label-md text-label-md transition-colors duration-300" href="#">Experience</a>
+<a class="text-on-surface dark:text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors duration-300" href="#">Suites</a>
+<a class="text-on-surface dark:text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors duration-300" href="#">Dining</a>
+<a class="text-on-surface dark:text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md scale-95 transition-transform duration-200 hover:scale-100 active:scale-95">
+            Book Now
+        </button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-105" data-alt="A cinematic, high-angle wide shot of a luxury infinity pool overlooking the Atlantic coast of Liberia at sunset. The lighting is warm and golden, reflecting off the crystal-clear water. The aesthetic is modern luxury with clean architectural lines, minimalist lounge chairs in soft beige, and lush tropical greenery framing the scene. The mood is tranquil, exclusive, and breathtakingly beautiful." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNWIYtzgpVIXlYcaLZPxg6CY4Vht_3lEMKHoWefiH4-m0y1m745vUXMtkYsjIBxujnhnWo9u5lEe5ubTf7l6mKb0QYwNjfFCObZweCDwqmM1Il2F5wQH-paLQ6VkDj1fLHKM8qZiqWW9pMFGZKjMgpL1ehkiBxhTO224v0eNm2UM2jbh_oAHE1fILddbp36D_XbB8PrFgVAVRnpsploaNIz9AOb7uOav8JGqkugRyX2Iu1T7xh4CKSPgXvEXHl4jJwmTfxzUt5N9M')">
+</div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-4">
+<p class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] mb-4">Curated Experiences</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-4xl mx-auto">Transcending the Everyday</h1>
+</div>
+</section>
+<!-- The Art of Living Section (On-site) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-20 reveal-on-scroll">
+<div class="md:col-span-5">
+<span class="text-secondary font-label-md text-label-md block mb-4">— ON-SITE SANCTUARY</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">The Art of Living</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Within the walls of THE SUITES, every detail is choreographed to enhance your well-being. From our signature obsidian-lined infinity pool to the holistic vibrations of the AURA Spa, discovery begins at your doorstep.
+                    </p>
+</div>
+<div class="md:col-span-7 aspect-[4/3] overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="An interior shot of a high-end wellness spa with minimalist design. Soft, diffused lighting illuminates smooth stone walls and a circular soaking tub. A single white orchid sits on a warm wood side table. The space is airy and serene, featuring a palette of soft beige, warm whites, and muted gold accents. The atmosphere conveys absolute quietude and sophisticated luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCduoz6Pvv2o3jnQhz1ZfZc4DQE0nCuW44Fxb0r90aJgkrWs4NKenJD-iul7GQ8Rx0R0D_SNLQMeVZ_BiXa8clJy-x6mm9kXq0b1hBR2HNkeqzMChQwnpLjdRy6zi7k424fhoPX_S_cud5FRVJEVsyTAA94eBCeiwavy8C_7xxI1X4go_4c7lzPQZiIJ8kS9TULxNGVVcpub9ilp7x_Qq1BC0dXW7x1aUSYEcSkp5R__meeuS7_G_bXbT9HEIGZEPp5W_9XDXJUHE4"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter reveal-on-scroll">
+<!-- Amenity Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] mb-6 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of a perfectly prepared tropical cocktail with fresh garnishes sitting on a marble bar counter. The background shows a blurry, elegant lounge with soft gold lighting and dark emerald accents. The image is crisp, focused, and exudes an editorial fashion magazine aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLy0hH_ZOHcACrcOOiFO_eSrUxyG0ytPnDi0Ys_vOLd6bscO5SyM6dl2fPZMoE5YBraa1A74Lq9bpJ9_bp1V98WAjtgkTkddV6jFlVqGdf0mYqSSwZhv157sDrEAvnsgBl3wmvFaDHLoJNmgsSNdCbgjY0kgQrMvRGMRvCHcGTAs9ugiKkYhiiqtAtbwsOfXoNx9gyPpm41wKdIYUgB0fGNIIDQONGEt50K1fQKtRAjcp3QtCQVC-EWh-6R-7hH35LUS_X1KHEfXk"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">The Alchemist Lounge</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Signature botanic infusions and rare Liberian spirits served in a setting of quiet elegance.</p>
+</div>
+<!-- Amenity Card 2 -->
+<div class="group cursor-pointer md:mt-12">
+<div class="aspect-[3/4] mb-6 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Top-down view of an infinity pool where the water meets the horizon of the ocean. A minimalist tray with fresh fruit and a linen napkin floats on the surface. The light is high-key and bright, emphasizing the pristine white and deep turquoise colors. The scene is incredibly peaceful and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaMR0ZsGD30DIkf39rE5WHN8bSeHa75KpEuxETx7LDxBa1PT7oIuMTbfF0hyB2ekhU9eeWcnGKOAu5hOCI7mDSrz6s7NKz5gsDdvFv2iJE3kFNwcbwGl2IrTRFQj1cLymKfNllKJivy3eWJtTspW3QUkYehlu6yfEXo1GbWp3gvOZTGykMT1b1XBLnUC7FlJxXDJkfG3NqR6Csx1oK-gIDxPfrQT03whHycuE3I0bDXFiH0Ntl_h4d1z0U6Q387ibztBxvB9rkibY"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Obsidian Pool</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Temperature-controlled waters that vanish into the Atlantic horizon, framed by private cabanas.</p>
+</div>
+<!-- Amenity Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] mb-6 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A luxury fitness studio with floor-to-ceiling windows overlooking a lush tropical garden. High-end wooden exercise equipment is spaced widely apart. The morning sun filters through palm leaves, creating soft dappled shadows on the polished floor. The aesthetic is clean, modern, and high-performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC5XUtRH2-YHWrxKHCQLWot0KtmVgR6bifNpWVE2q-2pE_Xg9zNuBLqKU_62k36WpsqYTXaGranQcDFE0HOGkr-IWYjNVQAuFxiDA5Jt8GMXuJvb5EHhZWWFvNjMgp_Il5caVm61v3VOWP_jfAVcPzb_ks4EFk-lYfP_0jemzgKDfeAnCDhTZQRwtnun78wjDER8yo2cKNuZJQkYvRSH5ca-JN4_0tnysx7-QrTjGGvf-TaB5Fnc9MJ9IdMqbazzD6o7sjVvsJDA0"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">The Vitality Hub</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">State-of-the-art movement space with personal practitioners available for bespoke wellness journeys.</p>
+</div>
+</div>
+</section>
+<!-- Liberian Adventures Section (Off-site) -->
+<section class="bg-primary py-section-gap overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="reveal-on-scroll">
+<span class="text-secondary-fixed font-label-md text-label-md block mb-4 uppercase tracking-widest">Beyond the Threshold</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary">Liberian Adventures</h2>
+</div>
+<div class="max-w-md reveal-on-scroll" style="transition-delay: 200ms">
+<p class="text-on-primary-container font-body-lg text-body-lg italic">"To travel is to find the soul of a place, hidden in its whispers and its tides."</p>
+</div>
+</div>
+<!-- Bento Grid Adventures -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 reveal-on-scroll">
+<!-- Featured Adventure -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl h-[500px] md:h-[600px] border border-on-primary-fixed-variant">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="A sleek, white modern yacht sailing on the deep blue waters of the Atlantic Ocean at sunset. The sails are full, and the wake of the boat creates a beautiful white trail. The sky is a gradient of violet, orange, and deep blue. The image is captured from a drone, showing the isolation and majesty of private sailing. High-contrast and cinematic lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAN8B1aCdagOlfp5-tL4ZAkGwpdXMoz6tY-OPS2QTpYWW69KkWGcZOUye6u03pSy9ulz2NkgFGZi-ArY35uLTZI5najlF_9Yzru7x7EeoYMVjPESsPLiQxImIeaB6qIx1kmDlckuXdgemYdQwJKKIa6MOHu-73XEM-6De630IpkCa3xx51IkahMZHTIDVb4P2jFYETb4VlmlIUrX9-ZWhp2GqXAIviQwX_B-dTTDa37PqcFBuV3sQ2Ix--Q4fMZzPfuhGaRyEFCtGw')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Private Expedition</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary mb-4">Private Atlantic Sailing</h3>
+<p class="text-on-primary/80 max-w-lg mb-6">Charter our custom yacht for a day of sun-drenched isolation and sunset champagne, guided by master navigators.</p>
+<button class="flex items-center gap-2 text-secondary-fixed font-label-md text-label-md uppercase tracking-wider group-hover:gap-4 transition-all">
+                                Explore Voyage <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Side Adventure 1 -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="flex-1 group relative overflow-hidden rounded-xl border border-on-primary-fixed-variant">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An editorial shot of a local Liberian guide forageing for fresh ingredients along a rocky, pristine coastline. He is holding a basket of sea botanicals. The light is cool and crisp morning light. The background features crashing waves and a lush green cliffside. The style is like a high-end food and travel magazine feature." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD05x5nIJWBNdW8oTZTqAJI9ZIYJJ1gokrgWa7AsKjqGi3Jna3UGk7TclZYnO4mIpYPhHPDG27vcf3xoHuEbvmO1TeEAHlOFkERQPlEyu3f7NueXTv8MWihWFJTXzzuVu_jWDmBtLX4ifSb9zSfdTWoZcNBbXbh59zV2W0hCEBgC60-Satw_BJL_GDYeSUxq1w8cQykDvarNRN-m_C539tBF4HvIzCOBiVDebhqdcp8m5zrGzkSvq8oZhhiCS4TRxb0VXHVLG7mx5U')">
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h4 class="font-headline-sm text-headline-sm text-white mb-2">Coastal Foraging</h4>
+<p class="text-white/80 text-body-md line-clamp-2">Discover the edible treasures of the Liberian coast with our master chef.</p>
+</div>
+</div>
+<div class="flex-1 group relative overflow-hidden rounded-xl border border-on-primary-fixed-variant">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A beautiful street scene in Monrovia showing colonial-era architecture with a modern twist. The buildings are painted in soft pastels, and the street is clean and quiet. Warm afternoon sunlight casts long shadows. The shot is composed with a focus on historical detail and architectural symmetry. The mood is cultured and sophisticated." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUCuEKENzha-lZVkCxMKR5CtjRqALQFt9m5C-m_ZiaVoXh0g4C1EvzFEIJhZYnGJbcpVX6P-w-K48shSTBulIofIoz_TNJa7GDgZOm8pvVc7saBuQWCFm5wmy8l7jU0EqmBoVKzyd-cXgAd34HBGtL3iwP_7H71q8myFldp9Wf1y-HNa2STtBPAWw-CdzhNhG-pNQ3QplDapcG3T_lDG-7YAgAif8jCZPLceUXGfedai-1AOMxxAbPesD-3SqCorJYtN9oehLKX5A')">
+</div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h4 class="font-headline-sm text-headline-sm text-white mb-2">Monrovia Heritage</h4>
+<p class="text-white/80 text-body-md line-clamp-2">An exclusive guided walk through the architectural and political history of the capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote / Divider Section -->
+<section class="py-section-gap text-center px-4 max-w-3xl mx-auto reveal-on-scroll">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8">bed</span>
+<blockquote class="font-headline-md text-headline-md italic text-primary leading-snug">
+                "We don't just provide a place to stay; we curate a canvas for memories that remain long after the tide has changed."
+            </blockquote>
+<div class="w-24 h-px bg-secondary/30 mx-auto mt-10"></div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop reveal-on-scroll">
+<div class="bg-surface-container-high rounded-3xl p-12 md:p-24 flex flex-col md:flex-row items-center gap-12 border border-secondary/10">
+<div class="flex-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Stay Informed</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Receive seasonal updates on new experiences, seasonal menus, and exclusive guest events at THE SUITES.</p>
+</div>
+<div class="flex-1 w-full max-w-md">
+<form class="flex flex-col gap-4">
+<input class="bg-white border border-outline-variant/50 px-6 py-4 rounded-lg focus:ring-1 focus:ring-secondary focus:border-secondary outline-none transition-all placeholder:text-outline" placeholder="Your Email Address" type="email"/>
+<button class="bg-primary text-on-primary py-4 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors">Join the Circle</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-secondary/20">
+<div class="w-full py-section-gap px-6 md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-secondary dark:text-secondary-fixed mb-6">THE SUITES</div>
+<p class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md mb-8">Redefining luxury through the lens of Liberian heritage and modern exclusivity.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary dark:text-on-primary-fixed font-label-md text-label-md uppercase tracking-widest mb-2">Explore</h4>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Suites</a>
+<a class="text-secondary underline font-body-md text-body-md" href="#">Experience</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Dining</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Wellness</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary dark:text-on-primary-fixed font-label-md text-label-md uppercase tracking-widest mb-2">Legal</h4>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Press Kit</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary dark:text-on-primary-fixed font-label-md text-label-md uppercase tracking-widest mb-2">Connect</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed cursor-pointer">public</span>
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed cursor-pointer">camera</span>
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed cursor-pointer">alternate_email</span>
+</div>
+<p class="mt-4 text-on-surface-variant dark:text-surface-variant font-label-sm text-label-sm opacity-80">© 2024 THE SUITES LLC. Monrovia, Liberia.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Simple smooth scroll behavior for interactions
+        document.querySelectorAll('button, a').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.classList.contains('scale-95')) {
+                    this.classList.add('scale-90');
+                    setTimeout(() => this.classList.remove('scale-90'), 150);
+                }
+            });
+        });
+    </script>
+</body></html>

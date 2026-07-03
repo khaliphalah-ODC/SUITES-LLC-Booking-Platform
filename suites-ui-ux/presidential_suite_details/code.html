@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Presidential Suite | THE SUITES</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#002117",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "inverse-surface": "#27313f",
+                      "outline-variant": "#bfc9c3",
+                      "surface-tint": "#2b6954",
+                      "on-background": "#121c2a",
+                      "on-primary-fixed-variant": "#0b513d",
+                      "surface-variant": "#d9e3f6",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#ffe088",
+                      "on-secondary-fixed": "#241a00",
+                      "on-secondary-container": "#745c00",
+                      "on-surface": "#121c2a",
+                      "on-primary-container": "#80bea6",
+                      "secondary-container": "#fed65b",
+                      "primary-fixed": "#b0f0d6",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed": "#1b1d0e",
+                      "tertiary-fixed": "#e4e4cc",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#95d3ba",
+                      "secondary-fixed-dim": "#e9c349",
+                      "inverse-primary": "#95d3ba",
+                      "surface-bright": "#f8f9ff",
+                      "on-surface-variant": "#404944",
+                      "surface-container-highest": "#d9e3f6",
+                      "primary": "#003527",
+                      "outline": "#707974",
+                      "tertiary": "#2e301f",
+                      "on-error": "#ffffff",
+                      "primary-container": "#064e3b",
+                      "surface-dim": "#d0dbed",
+                      "surface-container-high": "#dee9fc",
+                      "surface": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#474836",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#eff4ff",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#444634",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-tertiary-container": "#b3b49d",
+                      "secondary": "#735c00",
+                      "surface-container": "#e6eeff",
+                      "tertiary-fixed-dim": "#c8c8b0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "section-gap": "120px",
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Playfair Display"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-lg-mobile": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-surface/90 backdrop-blur-xl border-b border-secondary/10 shadow-sm opacity-95">
+<div class="flex items-center gap-12">
+<a class="text-headline-sm font-headline-sm text-primary tracking-tight" href="#">THE SUITES</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors duration-300" href="#">Experience</a>
+<a class="text-secondary border-b border-secondary pb-1 font-label-md hover:text-secondary transition-colors duration-300" href="#">Suites</a>
+<a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors duration-300" href="#">Dining</a>
+<a class="text-on-surface-variant font-label-md hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-md scale-95 transition-transform duration-200 hover:scale-100 active:scale-90">Book Now</button>
+</nav>
+<main class="pt-20">
+<!-- Suite Header Section -->
+<header class="pt-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-2 mb-8">
+<span class="text-secondary font-label-md uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-[1px] bg-secondary"></span>
+                    The Ultimate Experience
+                </span>
+<h1 class="font-headline-lg text-headline-lg text-primary max-w-3xl">The Presidential Suite</h1>
+</div>
+</header>
+<!-- High-fidelity Gallery (Bento Style) -->
+<section class="px-margin-desktop max-container-max mx-auto mb-section-gap">
+<div class="grid grid-cols-12 gap-gutter h-[600px]">
+<div class="col-span-8 h-full relative group overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A grand, ultra-luxurious primary bedroom in a tropical coastal resort. Soft afternoon light streams through floor-to-ceiling windows, illuminating a king-sized bed with crisp white linens. The decor features warm wood accents and muted gold details, embodying editorial minimalism. Outside, a glimpse of the emerald ocean creates a serene, high-end atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5c-wqlNvKq-cL2I62bkdqdjqhiF9jJ3Z201UsAYjPLxCtqvvspLW8RjMUVapET4P8X-Y84QBAXNg2p4sPrRTBbUQI63_nRNAtbgK8Mce6U4zsD1-5LW16cpR_3OMYS7puWrHltl4E9TbgZrq6asYu2n0xt8xnD45truPspeA0D5Wgsm9x9_NN8lJB8iMyPDxLNIP3TMRhEzS_lWi3SZY35mkv0WkF99x6phkQw9za9vNf9iX5AoxBJ-uYc4anC8KVscRRLXPJtnM')"></div>
+<div class="absolute inset-0 bg-black/5"></div>
+</div>
+<div class="col-span-4 flex flex-col gap-gutter h-full">
+<div class="h-1/2 relative group overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A private, expansive balcony overlooking the Atlantic coastline in Liberia. The scene features high-end outdoor furniture in dark emerald and wood, set against a backdrop of golden sunset lighting. The overall mood is exclusive and tranquil, reflecting the quiet confidence and luxury of The Suites LLC." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3dFBhadyMNClIlbC1WJa3dgG2n55DM5NPGu7ldjonDu1dOriXEOwXjgcwUtT8INnIj3q8hGjzWpBss73FMeJfABcGOMHIzkEtkJ360BXFJcvOxut_NIoXGSLNizsauGEYiwQkSOhU2vyWGTtx1LG-xkcNvEDXUyYWaetCB8re3KO9NW0iHsTZ2JaHgS5Wlgf_4zTCTw1YssXKQxT6o2EEqVHRSjf8dcTRBu7Fp7dFAyoLUtHB7QAKIOg8aHs_lN_fUBSe9NvFYs0')"></div>
+</div>
+<div class="h-1/2 relative group overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A modern, high-contrast bathroom featuring dark marble tiles and elegant gold fixtures. A large freestanding tub sits near a window with lush tropical greenery outside. The lighting is soft and ambient, highlighting the tactile refinement and editorial aesthetic of a luxury travel monograph." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxrjJq3aj_e4JWYlfDBOrQze58Hq_fuM4qViRakmN7RNStCJVmUZbd-zsMEyoH5FwhCNy77GEpVbAt8OlfSjnh9swMlkFaj8jQzuHHgBbBjVcQeIWhyryB-BH2WbKvCJwUyCOePmDWNY3_Fl0SKHlzFOhCDTiQs6XeOJqIsOgizbIHdgw3toymegOwYO4LzHCP2tLWccIEDZJz4OpQfikiPg0pOY5WfVnJGQoc9ZgCPtVfDUz2oB0Dl7Ztbt3H-R2TXab6i6HTCX8')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content & Booking Grid -->
+<section class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-12 gap-gutter mb-section-gap relative">
+<!-- Details Column -->
+<div class="col-span-8 flex flex-col gap-12">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Unrivaled Grandeur</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        Spanning over 250 square meters of curated luxury, the Presidential Suite is our most prestigious sanctuary. Designed with an unwavering commitment to editorial minimalism, the suite merges local Liberian craftsmanship with international sophistication. Every detail, from the hand-woven textiles to the bespoke gold-accented cabinetry, has been chosen to provide an atmosphere of quiet confidence and timeless elegance.
+                    </p>
+</div>
+<div class="h-[1px] bg-secondary/20 w-full"></div>
+<!-- Amenities Grid -->
+<div>
+<h3 class="font-label-md text-secondary uppercase tracking-widest mb-8">Exclusive Amenities</h3>
+<div class="grid grid-cols-2 gap-y-8 gap-x-12">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">person_pin</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">24/7 Butler Service</h4>
+<p class="text-on-surface-variant text-sm">Dedicated professional concierge for every need.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">balcony</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Private Wraparound Balcony</h4>
+<p class="text-on-surface-variant text-sm">Panoramic views of the ocean and lush gardens.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">waves</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Full Ocean View</h4>
+<p class="text-on-surface-variant text-sm">Floor-to-ceiling windows with unobstructed horizons.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">local_bar</span>
+<div>
+<h4 class="font-label-md text-on-surface mb-1">Private Bar &amp; Cellar</h4>
+<p class="text-on-surface-variant text-sm">Curated selection of spirits and fine wines.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Info -->
+<div class="bg-surface-container-low p-10 flex flex-col gap-6">
+<h3 class="font-headline-sm text-headline-sm text-primary">The Sanctuary Experience</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Guests of the Presidential Suite receive complimentary airport transfers in our private fleet, a welcome bottle of vintage champagne, and priority reservations at our award-winning dining establishments.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1 rounded-full bg-secondary-container/30 text-secondary text-xs font-label-md">ULTRA-FAST WIFI</span>
+<span class="px-4 py-1 rounded-full bg-secondary-container/30 text-secondary text-xs font-label-md">NETFLIX &amp; APPLE TV</span>
+<span class="px-4 py-1 rounded-full bg-secondary-container/30 text-secondary text-xs font-label-md">IN-ROOM SPA</span>
+</div>
+</div>
+</div>
+<!-- Booking Sidebar (Sticky) -->
+<aside class="col-span-4">
+<div class="sticky top-32 p-8 bg-surface-container-lowest border border-secondary/10 shadow-xl shadow-on-surface/5">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="text-on-surface-variant text-sm">Starting at</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-primary">$1,200</span>
+<span class="text-on-surface-variant text-sm">/ night</span>
+</div>
+</div>
+<div class="flex gap-1 items-center text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md">4.9</span>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="border border-outline-variant p-4 flex flex-col gap-1">
+<span class="text-xs font-label-md text-secondary uppercase tracking-tighter">Check-In / Check-Out</span>
+<span class="text-on-surface">Oct 24 — Oct 29, 2024</span>
+</div>
+<div class="border border-outline-variant p-4 flex flex-col gap-1">
+<span class="text-xs font-label-md text-secondary uppercase tracking-tighter">Guests</span>
+<span class="text-on-surface">2 Adults, 1 Child</span>
+</div>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between text-on-surface-variant">
+<span>$1,200 x 5 nights</span>
+<span>$6,000</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Service Fee</span>
+<span>$450</span>
+</div>
+<div class="h-[1px] bg-outline-variant/30 w-full"></div>
+<div class="flex justify-between font-bold text-primary text-lg">
+<span>Total</span>
+<span>$6,450</span>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-label-md py-4 transition-all duration-300 hover:bg-primary hover:text-on-primary">
+                        Continue to Booking
+                    </button>
+<p class="text-center text-xs text-on-surface-variant mt-4">No payment required at this step</p>
+</div>
+</aside>
+</section>
+<!-- Related Suites Section -->
+<section class="bg-surface-container-low py-section-gap px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-secondary font-label-md uppercase tracking-widest mb-2 block">Curated Selection</span>
+<h2 class="font-headline-md text-headline-md text-primary">Discover Other Suites</h2>
+</div>
+<a class="text-primary font-label-md border-b border-primary hover:text-secondary hover:border-secondary transition-all pb-1" href="#">View All Suites</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Suite Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A luxury executive suite featuring large windows with a view of a lush palm tree garden. The interior style is minimalist and editorial, with a palette of soft beige and charcoal. The lighting is bright and airy, typical of a high-end luxury resort in Liberia." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQ-UEp2PcpG7Lnor-Y-zgrjwBXrTujVd8B-kBY_XWYpaD8OLZxD-JY6NW_Jah4F-WEukoI4bOLuFK4SSvQhzg45orzBOp2sFRVsEDH0e8H9672i4UGOWgUqbEkKh_gZQckwfnD22GFqX9D_ZkMeOMFCPo9yZxiT2Oai4VD7e0GFfN5UuxBLTEngr85zxfPNFaoAdCrrvamn8kJbRk_9yQH-OsbBO8DYsrX5qPfL_c6FuJX6SypsLIXMoAfDnxZFA7k3L3EJAkBUSA')"></div>
+<div class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur px-4 py-2">
+<span class="text-primary font-label-md">$850 / Night</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">The Terrace Suite</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">A sun-drenched sanctuary featuring a private garden terrace and open-concept living.</p>
+</div>
+<!-- Suite Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A sophisticated boutique hotel suite with a cozy reading nook by a window overlooking a tranquil pool area. The design incorporates warm dark emerald tones and muted gold fixtures, creating a mood of quiet luxury and modern refinement." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkhGE6DfWwHYoz3C0m8bDmzirknyGXXGd9FS8AdSJP70jNFdB0TC_IRYFWqucx3WmZMzcdZcPYObiUr2FClxon7Y1v1R1vj5359YFf-PQFCPFF4wn9pLCquZ-tXmgi1hm-prSl3ZAxp5GcF9szcF5fDnHAheHqEFBhFYjY3BZifQP5GI_yhrKsJolVEfcZtEaqDFp-ueYQs5C5lnBa2oJ5ms7baw_SqjSmTmcE2vbxA-qPv39mC5SIPXKgJH7PtQmDkpx08UUpBiI')"></div>
+<div class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur px-4 py-2">
+<span class="text-primary font-label-md">$600 / Night</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Ocean View Deluxe</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Perfectly framed coastal views meet modern editorial design and bespoke comfort.</p>
+</div>
+<!-- Suite Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] overflow-hidden mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A large luxury penthouse living room with minimalist white furniture, a striking gold art installation on the wall, and high-key, natural lighting. The atmosphere is extremely exclusive and serene, embodying the luxury travel aesthetic of The Suites LLC." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeqYlewbaj1wHLdPO3PCpLg4iRzZ1UHcYgngQZwnE0qUsTAQb7L9VpziFioKCx3nz8T1MebXIM0lRXiPFDZ5UUpdrZmPU95AvjflRv0PnSNc2WIG_6K6EOh1puazTsNCsN-lzrBRbmvoAnYiehclUUnrrPpJt-N227K5N_rtmge0kYlRr09078ZFgx21wRd5zZh1aduOY3BWwFpndZ1mvimY9ZXOoG8YtQqrd5DoFa1wnRZ6Wv5D1kY5Ye5L7qBc7df2wOqlkcZlA')"></div>
+<div class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur px-4 py-2">
+<span class="text-primary font-label-md">$2,500 / Night</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">The Royal Penthouse</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">An expansive top-floor manor featuring a private infinity pool and 360-degree views.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto bg-surface-container-highest border-t border-secondary/20">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-headline-md text-headline-md text-secondary mb-6">THE SUITES</h2>
+<p class="text-on-surface-variant font-body-md max-w-xs">
+                Exemplifying modern luxury and Liberian heritage through meticulous design and heartfelt hospitality.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-primary uppercase mb-2">Explore</h4>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Our Suites</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Dining Experiences</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Wellness &amp; Spa</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Private Events</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-primary uppercase mb-2">Information</h4>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-label-md text-primary uppercase mb-2">Newsletter</h4>
+<p class="text-on-surface-variant text-sm">Join our inner circle for exclusive offers.</p>
+<div class="flex border-b border-secondary/30 pb-2">
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm placeholder:text-on-surface-variant/50" placeholder="Your email address" type="email"/>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<p class="text-on-surface-variant font-label-sm mt-4">© 2024 THE SUITES LLC. Monrovia, Liberia.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the booking sticky sidebar appearance
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.add('shadow-sm');
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

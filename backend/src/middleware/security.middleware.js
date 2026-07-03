@@ -7,10 +7,23 @@ const rateLimit = require("express-rate-limit");
 const pinoHttp = require("pino-http");
 const env = require("../config/env");
 
+function normalizeOrigin(value) {
+  return String(value || "").replace(/\/+$/, "");
+}
+
+function isAllowedVercelPreview(origin) {
+  return /^https:\/\/suites-llc-booking-platform(?:-4lo3)?(?:-[a-z0-9]+)?\.vercel\.app$/i.test(origin);
+}
+
 const corsOptions = {
   origin(origin, callback) {
-    const allowed = env.frontendUrl.split(",").map((item) => item.trim());
-    if (!origin || allowed.includes(origin)) return callback(null, true);
+    const requestOrigin = normalizeOrigin(origin);
+    const allowed = env.frontendUrl.split(",").map((item) => normalizeOrigin(item.trim()));
+
+    if (!requestOrigin || allowed.includes(requestOrigin) || isAllowedVercelPreview(requestOrigin)) {
+      return callback(null, true);
+    }
+
     return callback(new Error("Not allowed by CORS."));
   },
   credentials: true,

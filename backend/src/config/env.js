@@ -20,6 +20,11 @@ const env = {
   refreshTokenDays: Number(process.env.REFRESH_TOKEN_DAYS || 30),
   cookieSecure: process.env.COOKIE_SECURE === "true",
   taxRate: Number(process.env.TAX_RATE || 0),
+  rateLimits: {
+    api: Number(process.env.RATE_LIMIT_API_MAX || 300),
+    auth: Number(process.env.RATE_LIMIT_AUTH_MAX || 100),
+    write: Number(process.env.RATE_LIMIT_WRITE_MAX || 60),
+  },
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     apiKey: process.env.CLOUDINARY_API_KEY,

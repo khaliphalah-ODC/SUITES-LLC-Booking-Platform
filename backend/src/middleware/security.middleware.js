@@ -31,21 +31,21 @@ const corsOptions = {
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: env.nodeEnv === "production" ? 300 : 1000,
+  max: env.nodeEnv === "production" ? env.rateLimits.api : 1000,
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: env.nodeEnv === "production" ? 20 : 100,
+  max: env.nodeEnv === "production" ? env.rateLimits.auth : 100,
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const writeLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: env.nodeEnv === "production" ? 60 : 300,
+  max: env.nodeEnv === "production" ? env.rateLimits.write : 300,
   standardHeaders: true,
   legacyHeaders: false,
 });

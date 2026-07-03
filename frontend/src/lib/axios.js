@@ -16,14 +16,29 @@ export function storeAuthSession(data = {}) {
   if (data.user) {
     window.localStorage.setItem("suites_user", JSON.stringify(data.user));
   }
+  if (data.accessToken || data.token) {
+    window.localStorage.setItem("suites_access_token", data.accessToken || data.token);
+  }
+  if (data.refreshToken) {
+    window.localStorage.setItem("suites_refresh_token", data.refreshToken);
+  }
 }
 
 export function clearStoredAuth() {
   if (!canUseStorage()) return;
-  // Remove legacy token keys so stale Bearer tokens cannot override the cookie session.
   window.localStorage.removeItem("suites_access_token");
   window.localStorage.removeItem("suites_refresh_token");
   window.localStorage.removeItem("suites_user");
+}
+
+function getStoredAccessToken() {
+  if (!canUseStorage()) return "";
+  return window.localStorage.getItem("suites_access_token") || "";
+}
+
+function getStoredRefreshToken() {
+  if (!canUseStorage()) return "";
+  return window.localStorage.getItem("suites_refresh_token") || "";
 }
 
 function toAppError(error) {
@@ -64,8 +79,9 @@ const apiClient = axios.create({
 });
 
 apiClient.interceptors.request.use((config) => {
-  if (canUseStorage() && config.headers?.Authorization) {
-    delete config.headers.Authorization;
+  const token = getStoredAccessToken();
+  if (token && !config.skipAuth) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
 });
@@ -84,8 +100,15 @@ apiClient.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        const response = await refreshClient.post("/auth/refresh", {});
+        const response = await refreshClient.post("/auth/refresh", {
+          refreshToken: getStoredRefreshToken(),
+        });
         storeAuthSession(response.data);
+        const nextToken = response.data?.accessToken || response.data?.token;
+        if (nextToken) {
+          originalRequest.headers = originalRequest.headers || {};
+          originalRequest.headers.Authorization = `Bearer ${nextToken}`;
+        }
         return apiClient(originalRequest);
       } catch (refreshError) {
         clearStoredAuth();

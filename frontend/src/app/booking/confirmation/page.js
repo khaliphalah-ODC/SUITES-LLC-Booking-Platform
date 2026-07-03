@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PublicLayout from "@/components/layout/PublicLayout";
 
@@ -150,7 +150,7 @@ function getStoredConfirmation() {
   }
 }
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
   const searchParams = useSearchParams();
   const [storedConfirmation] = useState(() => getStoredConfirmation());
 
@@ -378,5 +378,13 @@ export default function ConfirmationPage() {
         </section>
       </main>
     </PublicLayout>
+  );
+}
+
+export default function ConfirmationPage() {
+  return (
+    <Suspense fallback={null}>
+      <ConfirmationContent />
+    </Suspense>
   );
 }
